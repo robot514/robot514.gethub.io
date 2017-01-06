@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title> Menu </title>
+<script src="https://simplycoding.org/files/simplyjs/simply.js"></script>
+<script>
+function start(){
+sjs.open();
+
+var background = new sjs.Image("Images/space7.png");
+background.setSize(sjs.getWidth(),sjs.getHeight());
+
+var score_txt = new sjs.Text("Your Score: 0", 21, "orange");
+score_txt.setText("Your Score: "+localStorage.getItem("score"));
+
+
+var menu_text = new sjs.Text("You win.",28,"blue");
+menu_text.centerH();
+var startBtn = new sjs.Button("Restart", function(){
+window.location = "fish.html";
+});
+startBtn.center();
+
+
+
+
+
+
+
+}
+</script>
+</head>
+<body onload="start()">
+<h1> Fish </h1>
+
+<div id="target" style="margin:auto;background:grey;"></div>
+</body>
+</html>
