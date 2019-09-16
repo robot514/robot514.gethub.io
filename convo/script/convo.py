@@ -11,14 +11,18 @@ canvas = Canvas(width=600, height=100)
 
 
 bot = PhotoImage(file="C:\\Users\\lucas.bachand\\Desktop\\convo\\images\\bot.gif")
+bot2 = PhotoImage(file="C:\\Users\\lucas.bachand\\Desktop\\convo\\images\\bot2.gif")
+canvas.create_image(230, 0, anchor=NW, image=bot)
+
+tk.title("bot")
 
 canvas.create_image(230, 0, anchor=NW, image=bot)
-tk.title("bot")
 
 text0 = ttk.Label(tk, text="hello", font=("Courier", 25))
 
 nxt = 0
-
+typing_box = ttk.Entry(tk, textvariable=boi)
+typing_box.pack()
 def Kill():
     quit()
 
@@ -36,20 +40,21 @@ def Send():
             global text6
             global text3
             global text1
+            global bot
             global name
             global text5
             global were
             global pets_name
 
 
-            text7 = ttk.Label(tk, text="your pets name is " + pets_name + " you live at " + were + " your name is " + name + " intresting info for the dark web now uploading", font=("Courier", 25), wraplength=200)
+            text7 = ttk.Label(tk, text="your pets name is " + pets_name + " you live at " + were + " your name is " + name + " intresting info for the dark web which I will now upload", font=("Courier", 25), wraplength=200)
             text6.destroy()
             text7.pack()
-            w.destroy()
+            typing_box.destroy
             button.destroy()
             kill_switch.pack()
             
-            w.delete(0, 'end')
+            typing_box.delete(0, 'end')
 
 
 
@@ -62,21 +67,21 @@ def Send():
             text5.destroy()
             text6.pack()
             nxt += 1
-            w.delete(0, 'end')
+            typing_box.delete(0, 'end')
 
     if mtext in ['no', 'nope', 'I do not']:
 
         if nxt == 3:
 
 
-            text4 = ttk.Label(tk, text="loser I don't like with people with no pets " + name + "bye", font=("Courier", 25))
+            text4 = ttk.Label(tk, text="loser I don't like with people with no pets " + name + " bye", font=("Courier", 25))
             text3.destroy()
             text4.pack()
-            w.destroy()
+            typing_box.destroy()
             button.destroy()
             kill_switch.pack()
             
-            w.delete(0, 'end')
+            
             
 
     if mtext in ['yes', 'I do']:
@@ -85,7 +90,7 @@ def Send():
             text3.destroy()
             text5.pack()
             nxt += 1
-            w.delete(0, 'end')
+            typing_box.delete(0, 'end')
 
 
     if not mtext in ['']:
@@ -96,7 +101,7 @@ def Send():
             text3 = ttk.Label(tk, text="cool " + name + " do you have any pets?", font=("Courier", 25))        
             text3.pack()
             text2.destroy()
-            w.delete(0, 'end')
+            typing_box.delete(0, 'end')
         else:
             pass
             
@@ -108,7 +113,7 @@ def Send():
             text2.pack()
             text1.destroy()
             name=mtext
-            w.delete(0, 'end')
+            typing_box.delete(0, 'end')
         else:
             pass
             
@@ -120,7 +125,7 @@ def Send():
             text1 = ttk.Label(tk, text="my name is the aim bot 6000 and yours?", font=("Courier", 25))
             text0.destroy()
             text1.pack()
-            w.delete(0, 'end')
+            typing_box.delete(0, 'end')
             
             
         else:
@@ -153,14 +158,14 @@ button = ttk.Button(tk, text ="Ok", command=Send)
 
 
 
-w = ttk.Entry(tk, textvariable=boi)
 
 
-canvas.create_image(230, 0, anchor=NW, image=bot)
+
+
 
     
     
-w.pack()
+
 button.pack()
 canvas.pack()
 text0.pack()
